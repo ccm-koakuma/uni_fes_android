@@ -1,17 +1,22 @@
 package ccm.uni_fes_app
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
-//add library
+//add widget library
 import android.widget.TextView
 import android.widget.Button
 import android.widget.Toast
+//Use http connection
 import okhttp3.*
+//use show log
 import android.util.Log
+//Fragment manager
+import ccm.uni_fes_app.uniFesPagerAdapter
+//Use Pager Adapter
+import android.support.v4.app.FragmentActivity
+import android.support.v4.view.ViewPager
 
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         // widget initialize
         val textView1 = findViewById(R.id.textView1) as TextView
         val button1 = findViewById(R.id.button1) as Button
+        val button2 = findViewById(R.id.button2) as Button
 
         button1.setOnClickListener{
             v->
@@ -32,13 +38,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }.execute()
         }
+        button2.setOnClickListener{
+            v->
+            val pagerControler = findViewById(R.id.pager) as ViewPager
+            pagerControler.setAdapter(uniFesPagerAdapter(getSupportFragmentManager()))
+        }
     }
-
     fun makeToast(text: String){
         val toast = Toast.makeText(this, text, Toast.LENGTH_SHORT)
         toast.show()
     }
-
     fun runGetHtml(url: String): String?{
         try {
             val client = OkHttpClient() as OkHttpClient
