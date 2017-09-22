@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -11,8 +11,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_height="343dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -76,36 +76,10 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:id="@+id/reaction"/>
-            <LinearLayout
-                android:orientation="horizontal"
+            <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="twitter1"
-                    android:id="@+id/twitter1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="twitter2"
-                    android:id="@+id/twitter2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="twitter3"
-                    android:id="@+id/twitter3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
+                android:layout_height="56dp"
+                android:id="@+id/twitterlist"/>
             <Button
                 android:text="会場の様子をちゅいーと"
                 android:id="@+id/sendcomment"

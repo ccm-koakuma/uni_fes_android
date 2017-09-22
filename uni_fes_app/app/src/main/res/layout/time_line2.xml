@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:name="@+id/time_line_activity"
+    android:name="@+id/time_line_activity2"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
-        android:id="@+id/timeline"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="time_line_activity"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="time_line_activity2"
+        android:id="@+id/timeline2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="148dp" />
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="169dp" />
 </RelativeLayout>

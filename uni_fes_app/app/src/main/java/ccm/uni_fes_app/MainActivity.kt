@@ -24,10 +24,18 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         //widget initialize here
-        val testbutton = findViewById(R.id.testbutton)
+        val testbutton = findViewById(R.id.testbutton) as Button
+        val homebutton = findViewById(R.id.homebutton) as Button
+        val shopbutton = findViewById(R.id.shopbutton) as Button
+        val schedulebutton = findViewById(R.id.schedulebutton) as Button
 
         //action below
         testbutton.setOnClickListener{
+            v->
+            val intent = Intent(this, recommend_shops::class.java)
+            startActivity(intent)
+        }
+        schedulebutton.setOnClickListener{
             v->
             val intent = Intent(this, schedule::class.java)
             startActivity(intent)

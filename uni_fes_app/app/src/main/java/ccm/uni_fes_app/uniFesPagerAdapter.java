@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import ccm.uni_fes_app.Fragments.shopRecommend;
 import ccm.uni_fes_app.Fragments.timeLine;
+import ccm.uni_fes_app.Fragments.timeLine2;
 
 public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public uniFesPagerAdapter(FragmentManager fm){
@@ -15,11 +16,11 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public Fragment getItem(int i){
         switch(i){
             case 0:
-                return new shopRecommend();
-            case 1:
                 return new timeLine();
+            case 1:
+                return new timeLine2();
             default:
-                return new shopRecommend();
+                return new timeLine();
         }
     }
     @Override
