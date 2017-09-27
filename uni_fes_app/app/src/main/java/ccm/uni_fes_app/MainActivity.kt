@@ -30,7 +30,7 @@ class MainActivity : FragmentActivity() {
         val schedulebutton = findViewById(R.id.schedulebutton) as Button
 
         //action below
-        testbutton.setOnClickListener{
+        shopbutton.setOnClickListener{
             v->
             val intent = Intent(this, recommend_shops::class.java)
             startActivity(intent)

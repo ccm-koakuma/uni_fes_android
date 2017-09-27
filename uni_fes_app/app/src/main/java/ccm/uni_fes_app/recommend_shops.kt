@@ -7,5 +7,6 @@ class recommend_shops : FragmentActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recommend_shops)
+
     }
 }
