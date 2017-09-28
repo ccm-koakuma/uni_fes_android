@@ -12,29 +12,42 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"/>
 
+    <!-- under menu bar-->
     <LinearLayout
-        android:weightSum="3"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:weightSum="4">
 
-        <Button
+        <ImageButton
+            android:src="@drawable/home_selected"
             android:id="@+id/homebutton"
-            android:text="HOME"
-            android:layout_width="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
-        <Button
+        <ImageButton
+            android:src="@drawable/schedule_selected"
             android:id="@+id/schedulebutton"
-            android:text="SCHEDULE"
-            android:layout_width="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
-        <Button
+        <ImageButton
+            android:src="@drawable/shop_selected"
             android:id="@+id/shopbutton"
-            android:text="SHOPS"
-            android:layout_width="wrap_content"
+            android:scaleType="centerInside"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
+        <ImageButton
+            android:src="@drawable/map_selected"
+            android:id="@+id/mapbutton"
+            android:scaleType="centerInside"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
     </LinearLayout>
 
 </LinearLayout>

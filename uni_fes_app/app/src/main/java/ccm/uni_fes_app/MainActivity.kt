@@ -23,23 +23,7 @@ class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //widget initialize here
-        val testbutton = findViewById(R.id.testbutton) as Button
-        val homebutton = findViewById(R.id.homebutton) as Button
-        val shopbutton = findViewById(R.id.shopbutton) as Button
-        val schedulebutton = findViewById(R.id.schedulebutton) as Button
 
-        //action below
-        shopbutton.setOnClickListener{
-            v->
-            val intent = Intent(this, recommend_shops::class.java)
-            startActivity(intent)
-        }
-        schedulebutton.setOnClickListener{
-            v->
-            val intent = Intent(this, schedule::class.java)
-            startActivity(intent)
-        }
     }
     fun makeToast(text: String){
         val toast = Toast.makeText(this, text, Toast.LENGTH_SHORT)
