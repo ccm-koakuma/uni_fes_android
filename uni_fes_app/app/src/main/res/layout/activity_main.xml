@@ -114,7 +114,7 @@
                 android:id="@+id/reaction"/>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="200dp"
                 android:id="@+id/twitterlist"/>
             <Button
                 android:text="会場の様子をちゅいーと"
