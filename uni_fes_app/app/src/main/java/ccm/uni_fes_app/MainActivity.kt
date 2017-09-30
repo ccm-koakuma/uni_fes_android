@@ -52,6 +52,16 @@ class MainActivity : FragmentActivity() {
             val intent = Intent(this, schedule::class.java)
             startActivity(intent)
         }
+        shopbutton.setOnClickListener{
+            v->
+            val intent = Intent(this, recommend_shops::class.java)
+            startActivity(intent)
+        }
+        mapbutton.setOnClickListener{
+            v->
+            val intent = Intent(this, mapPage::class.java)
+            startActivity(intent)
+        }
     }
     fun makeToast(text: String){
         val toast = Toast.makeText(this, text, Toast.LENGTH_SHORT)
