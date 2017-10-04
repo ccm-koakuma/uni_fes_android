@@ -19,13 +19,15 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
                 return new timeLine();
             case 1:
                 return new timeLine2();
+            case 2:
+                return new shopRecommend();
             default:
                 return new timeLine();
         }
     }
     @Override
     public int getCount(){
-        return 2;
+        return 3;
     }
     @Override
     public CharSequence getPageTitle(int position){

@@ -10,6 +10,6 @@ import android.view.ViewGroup;
 public class shopRecommend extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        return inflater.inflate(R.layout.recommend_shops, null);
+        return inflater.inflate(R.layout.favoriteshops, null);
     }
 }
