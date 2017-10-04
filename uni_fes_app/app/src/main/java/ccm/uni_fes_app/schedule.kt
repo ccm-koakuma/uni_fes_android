@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager
 
 //widget
 import android.widget.Toast
-import android.widget.Button
+import android.widget.ImageButton
 //change display
 import android.content.Intent
 //Pager Adapter
@@ -22,6 +22,27 @@ class schedule: FragmentActivity(){
         //set swipe action
         pager.setAdapter(uniFesPagerAdapter(getSupportFragmentManager()))
 
+        //under menu below
+        //under menu below
+        val homebutton = findViewById(R.id.homebutton) as ImageButton
+        val shopbutton = findViewById(R.id.shopbutton) as ImageButton
+        val mapbutton = findViewById(R.id.mapbutton) as ImageButton
+
+        homebutton.setOnClickListener{
+            v->
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
+        shopbutton.setOnClickListener{
+            v->
+            val intent = Intent(this,recommend_shops::class.java)
+            startActivity(intent)
+        }
+        mapbutton.setOnClickListener{
+            v->
+            val intent = Intent(this,mapPage::class.java)
+            startActivity(intent)
+        }
 
     }
     fun makeToast(str: String?){

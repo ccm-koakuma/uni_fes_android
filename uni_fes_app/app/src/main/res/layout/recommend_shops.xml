@@ -7,10 +7,18 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="recommend_shops_activity"
+        android:text="県大祭2017"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:gravity="center_horizontal"/>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_weight="1" />
+
 
     <!-- under menu bar-->
     <LinearLayout
