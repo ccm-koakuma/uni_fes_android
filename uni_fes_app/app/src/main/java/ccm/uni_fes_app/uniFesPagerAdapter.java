@@ -20,7 +20,8 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
             case 1:
                 return new timeLine2();
             case 2:
-                return new shopRecommend();
+                shopRecommend shp = new shopRecommend();
+                return shp;
             default:
                 return new timeLine();
         }
