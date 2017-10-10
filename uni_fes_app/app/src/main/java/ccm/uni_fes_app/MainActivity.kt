@@ -34,6 +34,7 @@ class MainActivity : FragmentActivity() {
         val schedulebutton = findViewById(R.id.schedulebutton) as ImageButton
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton
+        val seeAll = findViewById(R.id.allnewsbutton) as Button
 
         //set number 0 to 9 on list view
         val strList = ArrayList<Int>() as ArrayList<Int>
@@ -60,6 +61,11 @@ class MainActivity : FragmentActivity() {
         mapbutton.setOnClickListener{
             v->
             val intent = Intent(this, mapPage::class.java)
+            startActivity(intent)
+        }
+        seeAll.setOnClickListener{
+            v->
+            val intent = Intent(this, allNews::class.java)
             startActivity(intent)
         }
     }

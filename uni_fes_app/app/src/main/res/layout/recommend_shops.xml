@@ -4,14 +4,11 @@
     android:name="@+id/recommend_activity"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
-    <TextView
-        android:text="県大祭2017"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"/>
-
+    <include layout="@layout/page_title"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -19,43 +16,6 @@
         android:id="@+id/listView"
         android:layout_weight="1" />
 
-
     <!-- under menu bar-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="4">
-
-        <ImageButton
-            android:src="@drawable/home_selected"
-            android:id="@+id/homebutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/schedule_selected"
-            android:id="@+id/schedulebutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/shop_selected"
-            android:id="@+id/shopbutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/map_selected"
-            android:id="@+id/mapbutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
-
+    <include layout="@layout/under_menu_bar"/>
 </LinearLayout>

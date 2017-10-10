@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
     <LinearLayout
         android:orientation="vertical"
@@ -12,21 +14,15 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="県大祭2017"
-            android:id="@+id/titletextview"
-            android:gravity="center_horizontal"
-            />
+
+        <include layout="@layout/page_title"/>
 
         <!-- news part below-->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="NEW's"
-            android:id="@+id/news"
-            />
+            android:id="@+id/news"/>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -45,8 +41,9 @@
                     android:layout_height="wrap_content"/>
                 <ImageButton
                     android:src="@drawable/damy"
+                    android:background="@null"
                     android:layout_width="wrap_content"
-                    android:layout_height="120dp"
+                    android:layout_height="90dp"
                     android:scaleType="fitCenter"/>
 
             </LinearLayout>
@@ -63,8 +60,9 @@
                     android:layout_height="wrap_content"/>
                 <ImageButton
                     android:src="@drawable/damy"
+                    android:background="@null"
                     android:layout_width="wrap_content"
-                    android:layout_height="120dp"
+                    android:layout_height="90dp"
                     android:scaleType="fitCenter"/>
 
             </LinearLayout>
@@ -81,8 +79,9 @@
                     android:layout_height="wrap_content" />
                 <ImageButton
                     android:src="@drawable/damy"
+                    android:background="@null"
                     android:layout_width="wrap_content"
-                    android:layout_height="120dp"
+                    android:layout_height="90dp"
                     android:scaleType="fitCenter"/>
 
             </LinearLayout>
@@ -94,7 +93,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/testbutton"
+                android:id="@+id/allnewsbutton"
                 android:text=">see all"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true" />
@@ -126,42 +125,6 @@
     </LinearLayout>
     <!-- twitter part above-->
 
-    <!-- under menu bar-->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:weightSum="4">
-
-        <ImageButton
-            android:src="@drawable/home_selected"
-            android:id="@+id/homebutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/schedule_selected"
-            android:id="@+id/schedulebutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/shop_selected"
-            android:id="@+id/shopbutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-        <ImageButton
-            android:src="@drawable/map_selected"
-            android:id="@+id/mapbutton"
-            android:scaleType="centerInside"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-    </LinearLayout>
+    <include layout="@layout/under_menu_bar"/>
 
 </LinearLayout>

@@ -7,13 +7,12 @@
 
     <include layout="@layout/page_title"/>
 
-    <TextView
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:text="map here maybe"/>
+        android:id="@+id/newslist"/>
 
-    <!-- under menu bar-->
     <include layout="@layout/under_menu_bar"/>
+
 </LinearLayout>
