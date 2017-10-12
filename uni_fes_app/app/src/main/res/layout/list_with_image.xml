@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:scaleType="centerInside"
-        android:src="@drawable/map_selected"/>
+        android:src="@drawable/map_selected"
+        android:id="@+id/list_image"/>
 
 </LinearLayout>

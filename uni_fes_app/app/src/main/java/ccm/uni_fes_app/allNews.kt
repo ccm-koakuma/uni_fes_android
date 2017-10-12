@@ -13,6 +13,9 @@ import android.widget.ArrayAdapter
 import java.util.ArrayList
 //Change Activity
 import android.content.Intent
+//Change image(imageView)
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 
 class allNews : Activity(){
     override fun onCreate(savedInstanceState: Bundle?){
@@ -46,12 +49,37 @@ class allNews : Activity(){
             val intent = Intent(this, mapPage::class.java)
             startActivity(intent)
         }
-        var x = 0;
+        var x = 0
         while(x<21){
             al.add(x)
             x++
         }
         val aa = ArrayAdapter<Int>(this, R.layout.list_with_image,R.id.list_text, al)
         lv.setAdapter(aa)
+        x = 0
+        //Array that is set listView
+        val array = ArrayList<listItem>() as ArrayList<listItem> // array
+        //test bitmap data -> be used by imageView
+        val thumbdata = BitmapFactory.decodeResource(getResources(), R.drawable.home_selected) as Bitmap
+        val thumbdata2 = BitmapFactory.decodeResource(getResources(), R.drawable.schedule_selected) as Bitmap
+        //set datas
+        while(x<10){
+            if(x != 2) {
+                val items = listItem() as listItem
+                items.setThumb(thumbdata)
+                items.setText("sample")
+                array.add(items)
+            }
+            else{
+                val items = listItem() as listItem
+                items.setThumb(thumbdata2)
+                items.setText("hoge")
+                array.add(items)
+            }
+            x++
+        }
+        //set adapter
+        val la = listAdapter(this, R.layout.list_with_image, array) as listAdapter
+        lv.setAdapter(la)
     }
 }

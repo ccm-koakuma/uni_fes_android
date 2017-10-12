@@ -35,16 +35,19 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:src="@drawable/damy"
+                    android:id="@+id/newsimage1"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:scaleType="fitCenter"/>
+
                 <TextView
                     android:text="news1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <ImageButton
-                    android:src="@drawable/damy"
-                    android:background="@null"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:scaleType="fitCenter"/>
 
             </LinearLayout>
 
@@ -54,16 +57,19 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center_horizontal">
+
+                <ImageButton
+                    android:src="@drawable/damy"
+                    android:id="@+id/newsimage2"
+                    android:background="@null"
+                    android:layout_width="wrap_content"
+                    android:layout_height="90dp"
+                    android:scaleType="fitCenter"/>
+
                 <TextView
                     android:text="news2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <ImageButton
-                    android:src="@drawable/damy"
-                    android:background="@null"
-                    android:layout_width="wrap_content"
-                    android:layout_height="90dp"
-                    android:scaleType="fitCenter"/>
 
             </LinearLayout>
 
@@ -73,16 +79,19 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:gravity="center_horizontal">
-                <TextView
-                    android:text="news3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+
                 <ImageButton
                     android:src="@drawable/damy"
+                    android:id="@+id/newsimage3"
                     android:background="@null"
                     android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:scaleType="fitCenter"/>
+
+                <TextView
+                    android:text="news3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
         </LinearLayout>

@@ -23,6 +23,8 @@ import android.content.Intent
 import java.util.ArrayList
 //Array adapter, be used listView
 import android.widget.ArrayAdapter
+//Lunch other app
+import android.net.Uri
 
 class MainActivity : FragmentActivity() {
 
@@ -35,6 +37,9 @@ class MainActivity : FragmentActivity() {
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton
         val seeAll = findViewById(R.id.allnewsbutton) as Button
+        val newsimage1 = findViewById(R.id.newsimage1) as ImageButton
+        val newsimage2 = findViewById(R.id.newsimage2) as ImageButton
+        val newsimage3 = findViewById(R.id.newsimage3) as ImageButton
 
         //set number 0 to 9 on list view
         val strList = ArrayList<Int>() as ArrayList<Int>
@@ -66,6 +71,24 @@ class MainActivity : FragmentActivity() {
         seeAll.setOnClickListener{
             v->
             val intent = Intent(this, allNews::class.java)
+            startActivity(intent)
+        }
+        newsimage1.setOnClickListener{
+            v->
+            val uri = Uri.parse("http://tpumarker.net") as Uri
+            val intent = Intent(Intent.ACTION_VIEW,uri)
+            startActivity(intent)
+        }
+        newsimage2.setOnClickListener{
+            v->
+            val uri = Uri.parse("http://tpumarker.net") as Uri
+            val intent = Intent(Intent.ACTION_VIEW,uri)
+            startActivity(intent)
+        }
+        newsimage3.setOnClickListener{
+            v->
+            val uri = Uri.parse("http://tpumarker.net") as Uri
+            val intent = Intent(Intent.ACTION_VIEW,uri)
             startActivity(intent)
         }
     }
