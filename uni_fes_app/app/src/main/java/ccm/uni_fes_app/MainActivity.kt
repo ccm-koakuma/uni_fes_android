@@ -25,6 +25,9 @@ import java.util.ArrayList
 import android.widget.ArrayAdapter
 //Lunch other app
 import android.net.Uri
+//Use Bitmap -> grahics -> picture
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 
 class MainActivity : FragmentActivity() {
 
@@ -41,14 +44,19 @@ class MainActivity : FragmentActivity() {
         val newsimage2 = findViewById(R.id.newsimage2) as ImageButton
         val newsimage3 = findViewById(R.id.newsimage3) as ImageButton
 
-        //set number 0 to 9 on list view
-        val strList = ArrayList<Int>() as ArrayList<Int>
+        //twitter list
+        val strList = ArrayList<listItem>() as ArrayList<listItem>
+        val pic = BitmapFactory.decodeResource(getResources(), R.drawable.damy) as Bitmap
         var i = 0
         while(i<10){
-            strList.add(i)
+            val listitem = listItem() as listItem
+            listitem.setText("学祭まじまじ")
+            listitem.setThumb(pic)
+            listitem.setText2("投稿時間は未定なのです")
+            strList.add(listitem)
             i++
         }
-        val arrayadapter = ArrayAdapter<Int>(this,R.layout.list_content,strList)
+        val arrayadapter = listAdapter(this,R.layout.list_with_image,strList) as listAdapter
         val twitterlist = findViewById(R.id.twitterlist) as ListView
         twitterlist.setAdapter(arrayadapter)
 

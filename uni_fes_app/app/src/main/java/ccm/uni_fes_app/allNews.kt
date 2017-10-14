@@ -50,13 +50,6 @@ class allNews : Activity(){
             startActivity(intent)
         }
         var x = 0
-        while(x<21){
-            al.add(x)
-            x++
-        }
-        val aa = ArrayAdapter<Int>(this, R.layout.list_with_image,R.id.list_text, al)
-        lv.setAdapter(aa)
-        x = 0
         //Array that is set listView
         val array = ArrayList<listItem>() as ArrayList<listItem> // array
         //test bitmap data -> be used by imageView
@@ -68,12 +61,14 @@ class allNews : Activity(){
                 val items = listItem() as listItem
                 items.setThumb(thumbdata)
                 items.setText("sample")
+                items.setText2("投稿時間:" + "sample")
                 array.add(items)
             }
             else{
                 val items = listItem() as listItem
                 items.setThumb(thumbdata2)
                 items.setText("hoge")
+                items.setText2("投稿時間:" + "hoge")
                 array.add(items)
             }
             x++

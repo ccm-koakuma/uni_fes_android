@@ -17,13 +17,16 @@ class recommend_shops : FragmentActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recommend_shops)
 
-        val arrayList = ArrayList<Int>() as ArrayList<Int>
+        val arrayList = ArrayList<listItem>() as ArrayList<listItem>
         var x = 0 as Int
         while(x < 10){
-            arrayList.add(x)
+            val listitem = listItem() as listItem
+            listitem.setText("title")
+            listitem.setText2("mjd")
+            arrayList.add(listitem)
             x++
         }
-        val arrayAdapter = ArrayAdapter<Int>(this,R.layout.list_content,arrayList) as ArrayAdapter
+        val arrayAdapter = listAdapter2(this,R.layout.list_content,arrayList) as listAdapter2
         val listView = findViewById(R.id.listView) as ListView
         listView.setAdapter(arrayAdapter)
 

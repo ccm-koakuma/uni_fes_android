@@ -23,7 +23,6 @@ class schedule: FragmentActivity(){
         pager.setAdapter(uniFesPagerAdapter(getSupportFragmentManager()))
 
         //under menu below
-        //under menu below
         val homebutton = findViewById(R.id.homebutton) as ImageButton
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton

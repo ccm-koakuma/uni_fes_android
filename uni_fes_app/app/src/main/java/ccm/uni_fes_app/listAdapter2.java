@@ -5,16 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+
 import java.util.List;
 
-public class listAdapter extends ArrayAdapter<listItem> {
+public class listAdapter2 extends ArrayAdapter<listItem>{
     private int layout;
     private List<listItem> Items;
     private LayoutInflater inflater;
 
-    public listAdapter(Context context, int layout, List<listItem> items){
+    public listAdapter2(Context context, int layout, List<listItem> items){
         super(context, layout, items);
         this.layout = layout;
         // items have "lisetext" and "thumbneil"
@@ -32,18 +32,15 @@ public class listAdapter extends ArrayAdapter<listItem> {
         else{
             view = inflater.inflate(layout, null);
         }
-
         //get list items
-        listItem item = Items.get(position);
-        //set imagefield
-        ImageView thumb = (ImageView)view.findViewById(R.id.list_image);
-        thumb.setImageBitmap(item.getThumb());
-        //set titlefield
-        TextView listText = (TextView)view.findViewById(R.id.list_text);
-        listText.setText(item.getText());
-        //set timefield
-        TextView listTime = (TextView)view.findViewById(R.id.time);
-        listTime.setText(item.getText2());
+        listItem li = Items.get(position);
+        //widget initialize
+        TextView tv = (TextView)view.findViewById(R.id.textview1);
+        TextView tv2 = (TextView)view.findViewById(R.id.textview2);
+        //set item
+        tv.setText(li.getText());
+        tv2.setText(li.getText2());
+
         return view;
     }
 }

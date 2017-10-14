@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
+import ccm.uni_fes_app.listItem;
+import ccm.uni_fes_app.listAdapter2;
 
 public class shopRecommend extends Fragment{
     @Override
@@ -21,11 +23,14 @@ public class shopRecommend extends Fragment{
     }
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState){
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        ArrayList<listItem> al = new ArrayList<listItem>();
         for(int i=0;i<10;i++){
-            al.add(i);
+            listItem li = new listItem();
+            li.setText("title title");
+            li.setText2("content");
+            al.add(li);
         }
-        ArrayAdapter<Integer> aa = new ArrayAdapter<Integer>(this.getContext(),android.R.layout.simple_list_item_1,al);
+        listAdapter2 aa = new listAdapter2(this.getContext(),R.layout.list_content,al);
         ListView lv = (ListView)v.findViewById(R.id.favoriteList);
         lv.setAdapter(aa);
     }

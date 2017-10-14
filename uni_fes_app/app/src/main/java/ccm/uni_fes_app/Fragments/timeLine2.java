@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import java.util.ArrayList;
+import ccm.uni_fes_app.listItem;
+import ccm.uni_fes_app.listAdapter2;
 
 public class timeLine2 extends Fragment{
     @Override
@@ -19,11 +21,14 @@ public class timeLine2 extends Fragment{
     }
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState){
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        ArrayList<listItem> al = new ArrayList<listItem>();
         for(int i=0;i<30;i++){
-            al.add(i);
+            listItem listitem = new listItem();
+            listitem.setText("title ? ? ");
+            listitem.setText2("hogehog hogehoge");
+            al.add(listitem);
         }
-        ArrayAdapter<Integer> aa = new ArrayAdapter<Integer>(this.getContext(),android.R.layout.simple_list_item_1,al);
+        listAdapter2 aa = new listAdapter2(this.getContext(),R.layout.list_content,al);
         ListView lv = (ListView)v.findViewById(R.id.listView);
         lv.setAdapter(aa);
     }
