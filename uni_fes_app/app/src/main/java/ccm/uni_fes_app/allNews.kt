@@ -29,6 +29,7 @@ class allNews : Activity(){
         val al = ArrayList<Int>() as ArrayList<Int>
         val lv = findViewById(R.id.newslist) as ListView
 
+        //under menu bar
         homebutton.setOnClickListener{
             v->
             val intent = Intent(this, MainActivity::class.java)

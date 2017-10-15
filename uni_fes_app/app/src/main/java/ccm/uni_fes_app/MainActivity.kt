@@ -36,10 +36,11 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
 
         //widget initialize
+        val homebutton = findViewById(R.id.homebutton) as ImageButton
         val schedulebutton = findViewById(R.id.schedulebutton) as ImageButton
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton
-        val seeAll = findViewById(R.id.allnewsbutton) as Button
+        val seeAll = findViewById(R.id.allnewsbutton) as ImageButton
         val newsimage1 = findViewById(R.id.newsimage1) as ImageButton
         val newsimage2 = findViewById(R.id.newsimage2) as ImageButton
         val newsimage3 = findViewById(R.id.newsimage3) as ImageButton
@@ -61,6 +62,7 @@ class MainActivity : FragmentActivity() {
         twitterlist.setAdapter(arrayadapter)
 
         //under menu
+        homebutton.setImageResource(R.drawable.home)
         schedulebutton.setOnClickListener{
             v->
             val intent = Intent(this, schedule::class.java)
@@ -76,6 +78,8 @@ class MainActivity : FragmentActivity() {
             val intent = Intent(this, mapPage::class.java)
             startActivity(intent)
         }
+        //under menu above
+
         seeAll.setOnClickListener{
             v->
             val intent = Intent(this, allNews::class.java)

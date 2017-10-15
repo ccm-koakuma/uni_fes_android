@@ -16,7 +16,10 @@ class mapPage : FragmentActivity(){
         val homebutton = findViewById(R.id.homebutton) as ImageButton
         val schedulebutton = findViewById(R.id.schedulebutton) as ImageButton
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
+        val mapbutton = findViewById(R.id.mapbutton) as ImageButton
 
+        //under menu bar
+        mapbutton.setImageResource(R.drawable.map)
         homebutton.setOnClickListener{
             v->
             val intent = Intent(this,MainActivity::class.java)

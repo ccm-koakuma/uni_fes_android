@@ -99,13 +99,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageButton
+                android:src="@drawable/seeall"
+                android:layout_width="110dp"
+                android:layout_height="55dp"
                 android:id="@+id/allnewsbutton"
+                android:background="@null"
                 android:text=">see all"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitCenter"/>
         </RelativeLayout>
         <!-- news part above-->
 
@@ -127,6 +130,7 @@
             <Button
                 android:text="会場の様子をちゅいーと"
                 android:id="@+id/sendcomment"
+                android:background="@drawable/radius_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal" />

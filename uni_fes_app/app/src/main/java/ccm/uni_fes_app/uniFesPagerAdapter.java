@@ -32,6 +32,15 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     }
     @Override
     public CharSequence getPageTitle(int position){
-        return "page" + position;
+        switch(position){
+            case 0:
+                return "10/28";
+            case 1:
+                return "10/29";
+            case 2:
+                return "お気に入りイベント";
+            default:
+                return "page" + position;
+        }
     }
 }

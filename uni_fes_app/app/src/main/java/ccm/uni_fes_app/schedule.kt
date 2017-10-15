@@ -24,9 +24,12 @@ class schedule: FragmentActivity(){
 
         //under menu below
         val homebutton = findViewById(R.id.homebutton) as ImageButton
+        val schedulebutton = findViewById(R.id.schedulebutton) as ImageButton
         val shopbutton = findViewById(R.id.shopbutton) as ImageButton
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton
 
+        //under menu bar
+        schedulebutton.setImageResource(R.drawable.schedule)
         homebutton.setOnClickListener{
             v->
             val intent = Intent(this,MainActivity::class.java)

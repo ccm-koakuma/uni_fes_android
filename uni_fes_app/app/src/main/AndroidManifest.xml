@@ -31,6 +31,10 @@
             android:name=".allNews"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".detail_shops"
+            android:label="@string/app_name">
+        </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
