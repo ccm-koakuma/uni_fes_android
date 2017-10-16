@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import ccm.uni_fes_app.Fragments.shopRecommend;
 import ccm.uni_fes_app.Fragments.timeLine;
+import ccm.uni_fes_app.Fragments.timeLine2;
 
 public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public uniFesPagerAdapter(FragmentManager fm){
@@ -15,19 +16,31 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public Fragment getItem(int i){
         switch(i){
             case 0:
-                return new shopRecommend();
-            case 1:
                 return new timeLine();
+            case 1:
+                return new timeLine2();
+            case 2:
+                shopRecommend shp = new shopRecommend();
+                return shp;
             default:
-                return new shopRecommend();
+                return new timeLine();
         }
     }
     @Override
     public int getCount(){
-        return 2;
+        return 3;
     }
     @Override
     public CharSequence getPageTitle(int position){
-        return "page" + position;
+        switch(position){
+            case 0:
+                return "10/28";
+            case 1:
+                return "10/29";
+            case 2:
+                return "お気に入りイベント";
+            default:
+                return "page" + position;
+        }
     }
 }

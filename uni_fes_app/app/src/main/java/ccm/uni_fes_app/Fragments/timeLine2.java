@@ -7,26 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-//List View
-import java.util.ArrayList;
+//list view
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
+import java.util.ArrayList;
 import ccm.uni_fes_app.listItem;
 import ccm.uni_fes_app.listAdapter2;
 
-public class timeLine extends Fragment{
+public class timeLine2 extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        return inflater.inflate(R.layout.time_line, null);
+        return inflater.inflate(R.layout.time_line2, null);
     }
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState){
         ArrayList<listItem> al = new ArrayList<listItem>();
-        for(int i=0;i<20;i++){
-            listItem li = new listItem();
-            li.setText("title?");
-            li.setText2("time? and place?");
-            al.add(li);
+        for(int i=0;i<30;i++){
+            listItem listitem = new listItem();
+            listitem.setText("title ? ? ");
+            listitem.setText2("hogehog hogehoge");
+            al.add(listitem);
         }
         listAdapter2 aa = new listAdapter2(this.getContext(),R.layout.list_content,al);
         ListView lv = (ListView)v.findViewById(R.id.listView);
