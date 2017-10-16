@@ -44,6 +44,7 @@ class MainActivity : FragmentActivity() {
         val newsimage1 = findViewById(R.id.newsimage1) as ImageButton
         val newsimage2 = findViewById(R.id.newsimage2) as ImageButton
         val newsimage3 = findViewById(R.id.newsimage3) as ImageButton
+        val twitterbutton = findViewById(R.id.sendcomment) as Button
 
         //twitter list
         val strList = ArrayList<listItem>() as ArrayList<listItem>
@@ -100,6 +101,12 @@ class MainActivity : FragmentActivity() {
         newsimage3.setOnClickListener{
             v->
             val uri = Uri.parse("http://tpumarker.net") as Uri
+            val intent = Intent(Intent.ACTION_VIEW,uri)
+            startActivity(intent)
+        }
+        twitterbutton.setOnClickListener{
+            v->
+            val uri = Uri.parse("https://twitter.com") as Uri
             val intent = Intent(Intent.ACTION_VIEW,uri)
             startActivity(intent)
         }

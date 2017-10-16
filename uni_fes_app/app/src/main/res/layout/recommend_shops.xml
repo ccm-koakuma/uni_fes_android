@@ -4,18 +4,24 @@
     android:name="@+id/recommend_activity"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp">
+    android:layout_height="match_parent">
 
     <include layout="@layout/page_title"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_weight="1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView"
+            android:layout_weight="1" />
 
-    <!-- under menu bar-->
-    <include layout="@layout/under_menu_bar"/>
+        <!-- under menu bar-->
+        <include layout="@layout/under_menu_bar"/>
+
+    </LinearLayout>
 </LinearLayout>
