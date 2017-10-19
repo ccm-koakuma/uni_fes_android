@@ -7,6 +7,9 @@ import android.widget.ImageButton
 import android.widget.TextView
 //change activity
 import android.content.Intent
+//json library
+import org.json.JSONObject
+import org.json.JSONArray
 
 class detail_shops: Activity(){
     override fun onCreate(savedInstanceState: Bundle?){
@@ -21,12 +24,27 @@ class detail_shops: Activity(){
         val contenttext = findViewById(R.id.detail_text) as TextView
 
         val intent = getIntent()
-        val title = intent.getStringExtra("title")
-        val text = intent.getStringExtra("content")
+        val json_str = intent.getStringExtra("json")
 
-        titletext.setText(title)
-        contenttext.setText(text)
+        try{
+            val jsonarray = JSONArray(json_str) as JSONArray
+            var i = 0
+            val amount = jsonarray.length()
+            while(i < amount){
+                val id_str = jsonarray.getJSONObject(i).getString("id")
+                if(id_str == intent.getStringExtra("id")){
+                    titletext.setText(jsonarray.getJSONObject(i).getString("stname"))
+                    contenttext.setText(
+                            jsonarray.getJSONObject(i).getString("slname") + "\n" +
+                            jsonarray.getJSONObject(i).getString("location") + "\n" +
+                            jsonarray.getJSONObject(i).getString("detail")
+                    )
+                }
+                i++
+            }
+        }catch(e: Exception){
 
+        }
         //under menu bar
         shopbutton.setImageResource(R.drawable.shop)
         homebutton.setOnClickListener{
