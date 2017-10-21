@@ -129,10 +129,10 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:id="@+id/reaction"/>
-                <ListView
+                <WebView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:id="@+id/twitterlist"/>
+                    android:id="@+id/twitterview"/>
                 <Button
                     android:text="   会場の様子をちゅいーと   "
                     android:id="@+id/sendcomment"

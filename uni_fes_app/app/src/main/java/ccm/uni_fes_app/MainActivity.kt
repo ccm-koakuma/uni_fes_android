@@ -31,6 +31,9 @@ import android.graphics.BitmapFactory
 //Json Parse
 import org.json.JSONObject
 import org.json.JSONArray
+//web view
+import android.webkit.WebView
+import android.webkit.WebViewClient
 
 class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,21 +126,13 @@ class MainActivity : FragmentActivity() {
             Log.e("error","error",e)
         }
 
-        //twitter list
-        val strList = ArrayList<listItem>() as ArrayList<listItem>
-        val pic = BitmapFactory.decodeResource(getResources(), R.drawable.damy) as Bitmap
-        var i = 0
-        while(i<10){
-            val listitem = listItem() as listItem
-            listitem.setText("学祭まじまじ")
-            listitem.setThumb(pic)
-            listitem.setText2("投稿時間は未定なのです")
-            strList.add(listitem)
-            i++
-        }
-        val arrayadapter = listAdapter(this,R.layout.list_with_image,strList) as listAdapter
-        val twitterlist = findViewById(R.id.twitterlist) as ListView
-        twitterlist.setAdapter(arrayadapter)
+        //twitter View
+        val wv = findViewById(R.id.twitterview) as WebView
+        val client = WebViewClient() as WebViewClient
+        wv.setWebViewClient(client)
+        wv.loadUrl("https://twitter.com/search?q=%23soccer")
+        wv.getSettings().setJavaScriptEnabled(true)
+
         //set twitter button
         twitterbutton.setOnClickListener{
             v->

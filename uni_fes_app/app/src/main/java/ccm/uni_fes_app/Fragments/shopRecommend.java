@@ -3,7 +3,6 @@ package ccm.uni_fes_app.Fragments;
 import ccm.uni_fes_app.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +10,11 @@ import android.view.ViewGroup;
 //list view
 import android.widget.ListView;
 import java.util.ArrayList;
-import android.widget.ArrayAdapter;
+
 import ccm.uni_fes_app.listItem;
 import ccm.uni_fes_app.listAdapter2;
 //http get json
-import ccm.uni_fes_app.getJson;
+
 
 public class shopRecommend extends Fragment{
     @Override

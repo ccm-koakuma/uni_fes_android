@@ -8,22 +8,28 @@ import ccm.uni_fes_app.Fragments.shopRecommend;
 import ccm.uni_fes_app.Fragments.timeLine;
 import ccm.uni_fes_app.Fragments.timeLine2;
 
+//json parse
+import org.json.JSONObject;
+import org.json.JSONArray;
+
 public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
-    public uniFesPagerAdapter(FragmentManager fm){
+    String json = "";
+    public uniFesPagerAdapter(FragmentManager fm, String json){
         super(fm);
+        this.json = json;
     }
     @Override
     public Fragment getItem(int i){
         switch(i){
             case 0:
-                return new timeLine();
+                return new timeLine(json);
             case 1:
-                return new timeLine2();
+                return new timeLine2(json);
             case 2:
                 shopRecommend shp = new shopRecommend();
                 return shp;
             default:
-                return new timeLine();
+                return new timeLine(json);
         }
     }
     @Override
