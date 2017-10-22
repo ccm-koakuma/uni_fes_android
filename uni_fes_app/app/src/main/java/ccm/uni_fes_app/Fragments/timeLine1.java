@@ -13,34 +13,33 @@ import android.util.Log;
 //List View
 import java.util.ArrayList;
 import android.widget.ListView;
-import android.widget.ArrayAdapter;
+
 import ccm.uni_fes_app.listItem;
 import ccm.uni_fes_app.listAdapter2;
 
 //json
-import org.json.JSONObject;
 import org.json.JSONArray;
 
-public class timeLine extends Fragment{
+public class timeLine1 extends Fragment{
     private String json = "";
-    public timeLine(String json){
+    public timeLine1(String json){
         this.json = json;
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        return inflater.inflate(R.layout.time_line, null);
+        return inflater.inflate(R.layout.time_line1, null);
     }
     @Override
     public void onViewCreated(View v, Bundle savedInstanceState){
         ArrayList<listItem> al = new ArrayList<listItem>();
         try{
-            JSONArray ja = new JSONArray(this.json);
-            int amount = ja.length();
-            for(int i=0; i<amount; i++){
-                if(ja.getJSONObject(i).getString("time").substring(0,2).equals("30")){
+            JSONArray jsonarray = new JSONArray(this.json);
+            int amount = jsonarray.length();
+            for(int i=0;i<amount;i++){
+                if(jsonarray.getJSONObject(i).getString("date").equals("28")) {
                     listItem li = new listItem();
-                    li.setText(ja.getJSONObject(i).getString("title"));
-                    li.setText2("time: " + ja.getJSONObject(i).getString("time").substring(2,2) + ":" + ja.getJSONObject(i).getString("time").substring(4,2));
+                    li.setText(jsonarray.getJSONObject(i).getString("title"));
+                    li.setText2(jsonarray.getJSONObject(i).getString("time"));
                     al.add(li);
                 }
             }

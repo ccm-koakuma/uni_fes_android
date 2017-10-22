@@ -4,13 +4,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import ccm.uni_fes_app.Fragments.shopRecommend;
-import ccm.uni_fes_app.Fragments.timeLine;
+import ccm.uni_fes_app.Fragments.timeLine0;
+import ccm.uni_fes_app.Fragments.timeLine1;
 import ccm.uni_fes_app.Fragments.timeLine2;
 
 //json parse
-import org.json.JSONObject;
-import org.json.JSONArray;
+
 
 public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     String json = "";
@@ -22,14 +21,13 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public Fragment getItem(int i){
         switch(i){
             case 0:
-                return new timeLine(json);
+                return new timeLine0(json);
             case 1:
-                return new timeLine2(json);
+                return new timeLine1(json);
             case 2:
-                shopRecommend shp = new shopRecommend();
-                return shp;
+                return new timeLine2(json);
             default:
-                return new timeLine(json);
+                return new timeLine0(json);
         }
     }
     @Override
@@ -40,11 +38,11 @@ public class uniFesPagerAdapter extends FragmentStatePagerAdapter{
     public CharSequence getPageTitle(int position){
         switch(position){
             case 0:
-                return "10/28";
+                return "10/27(前夜祭)";
             case 1:
-                return "10/29";
+                return "10/28";
             case 2:
-                return "お気に入りイベント";
+                return "10/29";
             default:
                 return "page" + position;
         }

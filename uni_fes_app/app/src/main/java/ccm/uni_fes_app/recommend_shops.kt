@@ -46,7 +46,7 @@ class recommend_shops : FragmentActivity(){
                     while (i < arraylong) {
                         val listitem = listItem() as listItem
                         listitem.setText("team:  " + jsonarray.getJSONObject(i).getString("stname"))
-                        listitem.setText2("place:  " + jsonarray.getJSONObject(i).getString("location"))
+//                        listitem.setText2("place:  " + jsonarray.getJSONObject(i).getString("location"))
                         listitem.setID(jsonarray.getJSONObject(i).getString("id"))
                         arrayList.add(listitem)
                         i++

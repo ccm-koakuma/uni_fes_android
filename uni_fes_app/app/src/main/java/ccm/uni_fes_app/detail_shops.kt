@@ -5,11 +5,20 @@ import android.os.Bundle
 //widget
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.ImageView
 //change activity
 import android.content.Intent
+import android.content.Context
+import android.os.AsyncTask
 //json library
 import org.json.JSONObject
 import org.json.JSONArray
+//use image
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.util.Log
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class detail_shops: Activity(){
     override fun onCreate(savedInstanceState: Bundle?){
@@ -22,28 +31,36 @@ class detail_shops: Activity(){
         val mapbutton = findViewById(R.id.mapbutton) as ImageButton
         val titletext = findViewById(R.id.detail_title) as TextView
         val contenttext = findViewById(R.id.detail_text) as TextView
+        val teamimage = findViewById(R.id.teamimage) as ImageView
 
         val intent = getIntent()
         val json_str = intent.getStringExtra("json")
 
+        teamimage.setImageResource(R.drawable.damy)
+
         try{
             val jsonarray = JSONArray(json_str) as JSONArray
             var i = 0
-            val amount = jsonarray.length()
+            val amount = jsonarray.length() as Int
             while(i < amount){
                 val id_str = jsonarray.getJSONObject(i).getString("id")
                 if(id_str == intent.getStringExtra("id")){
                     titletext.setText(jsonarray.getJSONObject(i).getString("stname"))
-                    contenttext.setText(
-                            jsonarray.getJSONObject(i).getString("slname") + "\n" +
-                            jsonarray.getJSONObject(i).getString("location") + "\n" +
-                            jsonarray.getJSONObject(i).getString("detail")
-                    )
+
+                    object: getPic(){
+                        override fun doInBackground(vararg param: Void):Bitmap?{
+                            return run(jsonarray.getJSONObject(i).getString("picture"))
+                        }
+                        override fun onPostExecute(pic: Bitmap){
+                            teamimage.setImageBitmap(pic)
+                        }
+                    }.execute()
+                    break
                 }
                 i++
             }
         }catch(e: Exception){
-
+            Log.e("error","error",e)
         }
         //under menu bar
         shopbutton.setImageResource(R.drawable.shop)
@@ -68,4 +85,25 @@ class detail_shops: Activity(){
             startActivity(intent)
         }
     }
+    fun run(urlstr: String):Bitmap?{
+        try{
+            val client = OkHttpClient() as OkHttpClient
+            val req = Request.Builder().url(urlstr).get().build()
+            val res = client.newCall(req).execute()
+            var bitmapimage = null as Bitmap?
+            bitmapimage = BitmapFactory.decodeStream(res.body()?.byteStream())
+            return bitmapimage
+        }catch(e: Exception){
+            Log.e("error","error",e)
+            return null
+        }
+    }
+}
+
+
+open class getPic: AsyncTask<Void, Void, Bitmap>(){
+    override fun doInBackground(vararg param: Void): Bitmap?{
+        return null
+    }
+    override fun onPostExecute(pic: Bitmap){}
 }

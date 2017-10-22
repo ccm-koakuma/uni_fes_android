@@ -9,6 +9,7 @@ public class listItem {
     private String url = "";
     private String aurl = "";
     private String id = "";
+    private boolean b = false;
 
     public listItem(){};
 
@@ -37,6 +38,7 @@ public class listItem {
     public void setUrl(String url){this.url = url;}
     public void setArticleUrl(String aurl){this.aurl = aurl;}
     public void setID(String id){this.id = id;}
+    public void setPIC(boolean b){this.b = b;}
     public Bitmap getThumb(){
         return this.thumb;
     }
@@ -47,4 +49,5 @@ public class listItem {
     public String getUrl(){return this.url;}
     public String getArticleUrl(){return this.aurl;}
     public String getID(){return this.id;}
+    public boolean getPIC(){return this.b;}
 }
