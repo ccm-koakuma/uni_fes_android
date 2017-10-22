@@ -43,12 +43,13 @@
                         android:src="@drawable/damy"
                         android:id="@+id/newsimage1"
                         android:background="@null"
-                        android:layout_width="wrap_content"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"/>
 
                     <TextView
                         android:text="news1"
+                        android:id="@+id/news1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -65,12 +66,13 @@
                         android:src="@drawable/damy"
                         android:id="@+id/newsimage2"
                         android:background="@null"
-                        android:layout_width="wrap_content"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"/>
 
                     <TextView
                         android:text="news2"
+                        android:id="@+id/news2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
@@ -87,12 +89,13 @@
                         android:src="@drawable/damy"
                         android:id="@+id/newsimage3"
                         android:background="@null"
-                        android:layout_width="wrap_content"
-                        android:layout_height="90dp"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:scaleType="fitCenter"/>
 
                     <TextView
                         android:text="news3"
+                        android:id="@+id/news3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
 
@@ -126,10 +129,10 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:id="@+id/reaction"/>
-                <ListView
+                <WebView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:id="@+id/twitterlist"/>
+                    android:id="@+id/twitterview"/>
                 <Button
                     android:text="   会場の様子をちゅいーと   "
                     android:id="@+id/sendcomment"

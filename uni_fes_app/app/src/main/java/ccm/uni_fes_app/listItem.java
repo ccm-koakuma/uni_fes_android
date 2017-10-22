@@ -6,6 +6,10 @@ public class listItem {
     private String listText = null;
     private Bitmap thumb = null;
     private String listText2 = null;
+    private String url = "";
+    private String aurl = "";
+    private String id = "";
+    private boolean b = false;
 
     public listItem(){};
 
@@ -19,6 +23,11 @@ public class listItem {
         this.listText = string;
         this.listText2 = string2;
     }
+    public listItem(String url, String listText, String listText2){
+        this.listText = listText;
+        this.listText2 = listText2;
+        this.url = url;
+    }
     public void setThumb(Bitmap thumb){
         this.thumb = thumb;
     }
@@ -26,6 +35,10 @@ public class listItem {
         this.listText = listText;
     }
     public void setText2(String listText2){this.listText2 = listText2;}
+    public void setUrl(String url){this.url = url;}
+    public void setArticleUrl(String aurl){this.aurl = aurl;}
+    public void setID(String id){this.id = id;}
+    public void setPIC(boolean b){this.b = b;}
     public Bitmap getThumb(){
         return this.thumb;
     }
@@ -33,4 +46,8 @@ public class listItem {
         return this.listText;
     }
     public String getText2(){return this.listText2;}
+    public String getUrl(){return this.url;}
+    public String getArticleUrl(){return this.aurl;}
+    public String getID(){return this.id;}
+    public boolean getPIC(){return this.b;}
 }
