@@ -124,6 +124,8 @@ class MainActivity : FragmentActivity() {
             }.execute()
         }catch(e: Exception){
             Log.e("error","error",e)
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         //twitter View
