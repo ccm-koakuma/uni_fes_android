@@ -19,8 +19,9 @@ import org.json.JSONObject
 import org.json.JSONArray
 //Log
 import android.util.Log
-//http connection
-import okhttp3.*
+//image
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 
 class recommend_shops : FragmentActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
@@ -30,44 +31,19 @@ class recommend_shops : FragmentActivity(){
         //widget initialize
         val listView = findViewById(R.id.listView) as ListView
 
-        val arrayList = ArrayList<listItem>() as ArrayList<listItem>
-        var x = 0 as Int
-        var json_str = "" as String?
-        object: getShopData(){
-            override fun doInBackground(vararg param: Void):String?{
-                return getter()
-            }
-            override fun onPostExecute(json: String){
-                json_str = json
-                val jsonarray = JSONArray(json_str) as JSONArray
-                var i = 0;
-                val arraylong = jsonarray.length()
-                try {
-                    while (i < arraylong) {
-                        val listitem = listItem() as listItem
-                        listitem.setText("team:  " + jsonarray.getJSONObject(i).getString("stname"))
-//                        listitem.setText2("place:  " + jsonarray.getJSONObject(i).getString("location"))
-                        listitem.setID(jsonarray.getJSONObject(i).getString("id"))
-                        arrayList.add(listitem)
-                        i++
-                    }
-                    val arrayAdapter = listAdapter2(getApplication(),R.layout.list_content,arrayList) as listAdapter2
-                    listView.setAdapter(arrayAdapter)
-                }catch(e:Exception){
-                    Log.e("error","error",e)
-                }
-            }
-        }.execute()
-        //set click action
-        listView.onItemClickListener = AdapterView.OnItemClickListener{
-            parent, view, pos, id->
-            var postcontent = listItem() as listItem
-            postcontent = arrayList.get(pos)
-            val intent = Intent(this, detail_shops::class.java)
-            intent.putExtra("id", postcontent.getID())
-            intent.putExtra("json", json_str)
-            startActivity(intent)
+        //name of images
+        val list = arrayOf("s1","s2","s3","s4","s5","s6","s7","s8","s9",
+                "s10","s11","s12","s13","s14","s15","s16","s17","s18")
+
+        //set images on listview
+        val list_content = ArrayList<listItem>() as ArrayList<listItem>
+        val adapter = listAdapter4(this,R.layout.shop_list,list_content) as listAdapter4
+        for(item in list){
+            val listitem = listItem() as listItem
+            listitem.setText(item)
+            list_content.add(listitem)
         }
+        listView.setAdapter(adapter)
 
         //under menu below
         val homebutton = findViewById(R.id.homebutton) as ImageButton
@@ -93,21 +69,4 @@ class recommend_shops : FragmentActivity(){
             startActivity(intent)
         }
     }
-    fun getter():String?{
-        try{
-            val client = OkHttpClient() as OkHttpClient
-            val req = Request.Builder().url("http://ytrw3xix.0g0.jp/app2017/stall").get().build()
-            val res = client.newCall(req).execute()
-            return res.body()?.string()
-        }catch(e: Exception){
-            Log.e("error","error",e)
-            return "Faild get datas"
-        }
-    }
-}
-open class getShopData: AsyncTask<Void,Void,String>(){
-    override fun doInBackground(vararg param: Void):String?{
-        return null
-    }
-    override fun onPostExecute(json: String){}
 }
