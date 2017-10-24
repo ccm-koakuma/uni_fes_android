@@ -46,6 +46,7 @@ public class listAdapter extends ArrayAdapter<listItem> {
         ImageView thumb = (ImageView)view.findViewById(R.id.list_image);
         //get image from internet
         try{
+            //getImage(image field, context)
             getImage gi = new getImage(thumb, context);
             gi.execute(item.getUrl());
         }catch(Exception e){

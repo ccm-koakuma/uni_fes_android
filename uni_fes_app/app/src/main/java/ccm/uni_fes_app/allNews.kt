@@ -91,32 +91,5 @@ class allNews : Activity(){
             val intent = Intent(this, mapPage::class.java)
             startActivity(intent)
         }
-//        var x = 0
-//        //Array that is set listView
-//        val array = ArrayList<listItem>() as ArrayList<listItem> // array
-//        //test bitmap data -> be used by imageView
-//        val thumbdata = BitmapFactory.decodeResource(getResources(), R.drawable.home_selected) as Bitmap
-//        val thumbdata2 = BitmapFactory.decodeResource(getResources(), R.drawable.schedule_selected) as Bitmap
-//        //set datas
-//        while(x<10){
-//            if(x != 2) {
-//                val items = listItem() as listItem
-//                items.setThumb(thumbdata)
-//                items.setText("sample")
-//                items.setText2("投稿時間:" + "sample")
-//                array.add(items)
-//            }
-//            else{
-//                val items = listItem() as listItem
-//                items.setThumb(thumbdata2)
-//                items.setText("hoge")
-//                items.setText2("投稿時間:" + "hoge")
-//                array.add(items)
-//            }
-//            x++
-//        }
-//        //set adapter
-//        val la = listAdapter(this, R.layout.list_with_image, array) as listAdapter
-//        lv.setAdapter(la)
     }
 }
